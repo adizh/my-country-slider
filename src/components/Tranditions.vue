@@ -34,7 +34,7 @@
   </button>
  <h3 class='food_title'>{{currentImg.title}}</h3>
  <img :class='img.isShown ? "openedOne":"closedOne"' :src="currentImg.url" alt="">
-<div  :class=' isOpen ? "slider_img_descr_open" :"slider_img_descr"'>
+<div  :class=' isOpen  && smallDevices ? "slider_img_descr_open" :"slider_img_descr"'>
     <p>{{currentImg.descr}}
 </p>
 <transition name="fade"><p v-show='isOpen'>{{currentImg.showDescrInfo}}</p></transition>
@@ -273,7 +273,9 @@ Actual wedding consists of two parts: fun part with friends and younger relative
              currentImg: function() {
       return this.foodGallery[Math.abs(this.currentIndex) % this.foodGallery.length];
     },
-   
+    smallDevices(){
+      return window.innerWidth > 250 && window.innerWidth < 880
+    }
         },
         methods:{
             closeSection(){

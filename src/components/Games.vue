@@ -22,7 +22,7 @@
   </button>
  <h3 class='food_title'>{{currentGame.title}}</h3>
  <img :class='img.isShown ? "openedOne":"closedOne"' :src="currentGame.url" alt="">
-<div  :class='isOpen ? "slider_img_descr_open":currentGame.descr.length <=37 ? "small_desc" :"slider_img_descr"'>
+<div  :class='isOpen  && smallDevices ? "slider_img_descr_open":currentGame.descr.length <=37 ? "small_desc" :"slider_img_descr"'>
     <p>{{currentGame.descr}}
 </p>
 <p v-show='isOpen'>{{currentGame.showDescrInfo}}</p>
@@ -128,6 +128,9 @@
         computed:{
                       currentGame: function() {
       return this.gameGallery[Math.abs(this.currentIndex) % this.gameGallery.length];
+    },
+      smallDevices(){
+      return window.innerWidth > 250 && window.innerWidth < 880
     }
         },
       

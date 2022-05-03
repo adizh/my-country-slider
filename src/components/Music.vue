@@ -56,7 +56,7 @@
             :src="currentMusic.url"
             alt=""
           />
-          <div  :class='currentMusic.descr.length <=66 ? "descr_": isOpen  ? "slider_img_descr_open":"slider_img_descr"' >
+          <div  :class='currentMusic.descr.length <=66 ? "descr_": isOpen && smallDevices ? "slider_img_descr_open":"slider_img_descr"' >
             <p >{{ currentMusic.descr }}</p>
             <p v-show="isOpen">{{ currentMusic.showDescrInfo }}</p>
             <button
@@ -194,6 +194,9 @@ export default {
         Math.abs(this.currentIndex) % this.musicGallery.length
       ];
     },
+      smallDevices(){
+      return window.innerWidth > 250 && window.innerWidth < 880
+    }
   },
 };
 </script>

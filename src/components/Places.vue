@@ -50,9 +50,9 @@
             :src="currentImg.url"
             alt=""
           />
-          <div :class=" isOpen ? 'slider_img_descr_open':'slider_img_descr'">
+          <div :class="isOpen  &&  smallDevices? 'slider_img_descr_open':'slider_img_descr'">
           <p>{{ currentImg.descr }}</p>
-          <transition name="fade">    <p v-show="isOpen">{{ currentImg.showDescrInfo }}</p></transition>
+          <transition name="fade"> <p v-show="isOpen">{{ currentImg.showDescrInfo }}</p></transition>
             <button
               v-show="currentImg.showDescrInfo.length"
               @click="isOpen = !isOpen"
@@ -248,6 +248,9 @@ Currently, the mountain itself and the works involved, many of which were built 
             Math.abs(this.currentIndex) % this.foodGallery.length
           ];
     },
+     smallDevices(){
+      return window.innerWidth > 250 && window.innerWidth < 880
+    }
   },
   methods: {
     showImg(img, index) {
@@ -261,6 +264,10 @@ Currently, the mountain itself and the works involved, many of which were built 
       this.currentIndex -= 1;
     },
   },
+
+  mounted(){
+    console.log(window.innerWidth)
+  }
 };
 </script>
 

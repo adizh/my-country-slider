@@ -126,6 +126,15 @@ foodGallery: [
         showDescrInfo:'',
         isShown:false
     },
+     {
+        url:require(
+'../assets/food/pelmeni.jpg'
+    ),
+        descr:'Pelmeni or meat dumplings, that are made with a simple dough of flour, water, eggs, and salt. Typically, they are stuffed with a filling of ground pork, chicken, turkey, or beef seasoning with onions and salt and pepper. ',
+        title:'Pelmeni',
+        showDescrInfo:'',
+        isShown:false
+    },
       {
         url:require(
 '../assets/food/ashlaynfu.jpg'
@@ -142,6 +151,16 @@ foodGallery: [
         descr:'Chuchuk (or kazy, kazy karta, etc.) is a Central Asian sausage made from horse meat. For its production, horse instine is stuffed with horse meat with salt and spices. Use chuchuk in dried, boiled or smoked.',
         title:'Chuchuk',
         showDescrInfo:'',
+        isShown:false
+    },
+
+      {
+        url:require(
+'../assets/food/oromo.jpg'
+    ),
+        descr:'The name means "to roll"/"to wrap", referring to how the food is made.',
+        title:'Oromo',
+        showDescrInfo:'The dough for orama is made from flour, water, and salt. It is kneaded and rolled thin, and a filling is spread over it. The filling may contain minced potatoes, minced meat, animal fat, and sometimes minced pumpkin or some other vegetable. ',
         isShown:false
     },
       {
