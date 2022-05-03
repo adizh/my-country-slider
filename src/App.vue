@@ -158,7 +158,9 @@ align-items: center;
    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
     box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 }
-
+div.bm-menu{
+  background-color: #282828;
+}
 @media  (max-width: 480px) and (min-width: 250px){
   .inactive{
   display: block
@@ -168,7 +170,7 @@ align-items: center;
   display:none
 }
 
-.bm-menu{
+div.bm-menu{
   background-color: #282828;
 }
 
