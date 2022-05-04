@@ -57,12 +57,38 @@
 
 <Music />
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div  class='  animate__animated   animate__fadeInTopLeft links_page' >
 
+  <div v-if="isGameOpen" class="image">
+         <p   @click='isGameOpen =!isGameOpen'  class='nameOfCom'> Ethno Games  </p>
+      <div class='hereGoes  zoom-in'></div>
+ 
+  </div>
 
 
 
 
+       <div  class="image">
+         <router-link  to='/crafts' class='nameOfCom links_to'> Kyrgyz Craft  </router-link>
+      <div class='hereGoes  zoom-in crafts_links_'></div>
+ 
+  </div>
+
+ 
+<!-- 
 <div v-if='isGameOpen'>   
     <div class='crafts-link'>
    <p class='craft_text games'>
@@ -70,9 +96,9 @@
    <span class='text_' @click='isGameOpen =!isGameOpen'> Ethno Games  </span>
     </div>
  
-</div>
+</div> -->
 
-<div>
+<!-- <div>
     <router-link  @click='window.scrollTo(0,0)' style='text-decoration:none' to='/crafts'>
     <div class='crafts-link'>
    <p class='craft_text'>
@@ -80,18 +106,13 @@
    <span class='text_'> Kyrgyz Craft  </span>
     </div>
     </router-link>
-</div>
+</div> -->
 
 </div>
 
 <div  v-if='!isGameOpen'>
     <Games @closeSection='closeSection'/>
 </div>
-
-
-
-
-
 
     </div>
 </template>
@@ -365,6 +386,8 @@ Actual wedding consists of two parts: fun part with friends and younger relative
   display:flex;justify-content:center;
   align-items: center;
 }
+
+
 .games{
     background:url("../assets/trad/games.jpg");
       
@@ -381,14 +404,19 @@ Actual wedding consists of two parts: fun part with friends and younger relative
 
 .crafts-link:hover .craft_text,
 .crafts-link:focus .craft_text {
-  transform: scale(1.2);
+ /*  transform: scale(1.2);
   display:block;
   font-weight: 800;
   font-size:32px;
   text-align:center;
   display:flex;justify-content:center;
   align-items: center;
-  opacity:.6;
+  opacity:.6; */
+
+  transform: scale(1.2);
+  cursor:pointer; 
+
+
 }
 .text_{
        top: 48%;
@@ -404,34 +432,12 @@ Actual wedding consists of two parts: fun part with friends and younger relative
     font-size: 25px;
     padding:8px;
     width:50%;
-
 }
 .crafts-link:hover .text_{
     position:absolute;
     z-index:10;
-    color:white;
-   
+    color:white;  
 }
-
-.text_{
- display:block;
-background:none;
-}
-.craft-text::before {
-  content: "";
-  display: none;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-}
-.slider-images:hover{
-    cursor:pointer;
-    opacity:.6;
-}
-
 .crafts-link:hover .craft_text:before,
 .crafts-link:focus .craft_text:before
 {
@@ -441,6 +447,40 @@ background:none;
 .crafts-link:focus .craft_text{
     opacity:.6
 }
+.text_{
+ display:block;
+background:none;
+}
+.craft-text::before {
+/*   content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; */
+
+
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  background-size: cover;
+  transform-origin: center;
+  transition: transform .9s ease-in-out;  
+  
+
+
+}
+.slider-images:hover{
+    cursor:pointer;
+    opacity:.6;
+}
+
+
 .title{
      margin-top: 20px;
     font-weight: 700;
@@ -456,6 +496,176 @@ background:none;
     justify-content: center;
     align-items: center
 }
+
+/* 
+.image {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  background-image: url('https://unsplash.it/700/400/?random');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #000;
+  width:40%;
+  min-height:300px;
+      display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+} */
+
+
+.image{
+    position:relative;
+    width: 30%;
+    margin-bottom:30px;
+}
+.hereGoes{
+      position: relative;
+  overflow: hidden;
+  background-color: #000;
+  background-image: url("../assets/trad/games.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #000;
+  width:100%;
+  min-height:250px;
+
+}
+.crafts_links_{
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  background-image: url("../assets/crafts/crafts.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #000;
+  width:100%;
+  min-height:250px;
+}
+
+
+
+.first1:hover + .second2{
+    display:block;
+    cursor:pointer;
+    color:red;
+    cursor:pointer;
+}
+
+.image p, .links_to{
+  position: relative;
+  z-index: 1;
+  display: block;
+    background: none;
+    text-decoration: none;
+        width: 87%;
+    color: white;
+    font-weight: 900;
+    font-size: 28px;
+    border: 1px solid white;
+    border-radius: 18px;
+    padding: 5px 30px;
+    text-align: center;
+    padding: 1px 35px;
+    margin: 0 auto;
+    top: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 3;
+ 
+}
+/* 
+.image span:hover {
+    z-index:1000;
+    display:block;
+    color:white;
+    cursor:pointer;
+    opacity:1;
+
+
+} */
+
+.zoom-in::after {
+ /*  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  background-size: cover;
+  transform-origin: center;
+  transition: transform .9s ease-in-out; */
+}
+
+.zoom-in::after{
+ content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  background-size: cover;
+  transform-origin: center;
+  transition: transform .9s ease-in-out;
+}
+.zoom-in:hover{
+  /*   opacity:.6;
+    transition: .9s; */
+}
+.zoom-in:hover{
+     opacity:.6;
+    transition: .9s; 
+}
+.nameOfCom:after{
+    content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform-origin: center;
+  transition: transform .9s ease-in-out;
+}
+.nameOfCom:focus, .nameOfCom:hover + .hereGoes{
+ transform: scale(1.2);
+cursor:pointer;     
+opacity: .6;
+transition: .9s ease-out;
+}
+
+  .zoom-in:focus::after, .zoom-in:hover::after,.hereGoes{
+  transform: scale(1.2);
+  cursor:pointer;    
+}  
+
+/* .zoom-in:focus::after, .zoom-in:hover::after,.hereGoes{
+  transform: scale(1.2);
+  cursor:pointer;    
+}
+ */
+
+
+
+
+
+/* .zoom-in:focus::after, .zoom-in:hover::after,image {
+  transform: scale(1.2);
+  cursor:pointer; 
+} */
+
+
+
+
+
 
 
 
@@ -481,7 +691,8 @@ border:none
 .links_page{
 display:flex; 
 justify-content:space-evenly; 
-margin: 80px auto 20px
+margin: 80px auto 0px;
+padding-bottom: 50px;
 }
 .slider_img_descr{
        bottom: -191px;
@@ -584,6 +795,15 @@ padding:  30px 60px;
     .next_btn,.prev_btn{
         top:45%
     }
+    .image{
+            width: 39%;
+    margin: 15px auto 0;
+    }
+    .nameOfCom{
+            width: 90%;
+    font-size: 24px;
+
+    }
 }
 
 
@@ -591,6 +811,13 @@ padding:  30px 60px;
 
 
 @media screen and (max-width: 480px) and (min-width: 250px){
+    .image{
+            width: 79%;
+    margin: 0px auto 0;
+    }
+    .links_page{
+        gap:55px;
+    }
     .traditions_section{
         margin-top: -170px;
 

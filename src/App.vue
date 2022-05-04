@@ -161,6 +161,11 @@ align-items: center;
 div.bm-menu{
   background-color: #282828;
 }
+div.bm-burger-button span.line-style{
+display:block;
+background-color:white;
+}
+
 @media  (max-width: 480px) and (min-width: 250px){
   .inactive{
   display: block
@@ -174,7 +179,7 @@ div.bm-menu{
   background-color: #282828;
 }
 
-.line-style{
+div.bm-burger-button span.line-style{
 display:block;
 background-color:white;
 }
